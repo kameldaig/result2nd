@@ -76,10 +76,19 @@
             padding: 15px;
             border-radius: 10px;
             margin: 40px 0;
-            opacity: 0;
-            animation: slideIn 2s forwards 8s;
+            opacity: 1;
             transition: transform 0.5s;
         }
+        .intro-paragraph .sentence {
+            opacity: 0;
+            display: block;
+            margin: 10px 0;
+            animation: fadeIn 2s forwards;
+        }
+        .intro-paragraph .sentence:nth-child(1) { animation-delay: 7s; }
+        .intro-paragraph .sentence:nth-child(2) { animation-delay: 9s; }
+        .intro-paragraph .sentence:nth-child(3) { animation-delay: 11s; }
+        .intro-paragraph .sentence:nth-child(4) { animation-delay: 13s; }
         .intro-paragraph:hover {
             transform: translateY(-5px);
         }
@@ -89,7 +98,7 @@
             text-shadow: 0 0 15px rgba(231, 76, 60, 0.7);
             margin: 40px 0;
             opacity: 0;
-            animation: glow 3s forwards 12s;
+            animation: glow 3s forwards 16s;
         }
         .class-title {
             font-size: 2.5rem;
@@ -100,7 +109,7 @@
             transition: transform 0.5s;
         }
         .class-title:hover {
-            transform: scale(1.05);
+            transform: scale(1 D.05);
         }
         .result-item {
             font-size: 2rem;
@@ -163,6 +172,10 @@
             0% { opacity: 0; transform: translateY(50px); }
             100% { opacity: 1; transform: translateY(0); }
         }
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -178,10 +191,10 @@
         </div>
 
         <div class="intro-paragraph">
-            في ميدان العلم، لا يُقاس النجاح فقط بالأرقام بل بالجهد والمثابرة والرغبة الصادقة في التقدّم.<br>
-            في هذا الفصل الثاني، لمع نجمُ من اجتهد وأثمرت الساعات الطويلة من المذاكرة والتعب. فهنيئًا لكل من ورد اسمه اليوم فأنتم فخر مدرستكم وبكم نرتقي.<br>
-            أما من لم يرد اسمه اليوم فلا تيأسوا، فالفصل القادم فرصة جديدة وصفحة بيضاء تنتظر أن تُكتب بحروف النجاح.<br>
-            تذكّروا دائمًا: "من جدّ وجد ومن زرع حصد ومن سار على الدرب وصل."
+            <span class="sentence">في ميدان العلم، لا يُقاس النجاح فقط بالأرقام بل بالجهد والمثابرة والرغبة الصادقة في التقدّم.</span>
+            <span class="sentence">في هذا الفصل الثاني، لمع نجمُ من اجتهد وأثمرت الساعات الطويلة من المذاكرة والتعب. فهنيئًا لكل من ورد اسمه اليوم فأنتم فخر مدرستكم وبكم نرتقي.</span>
+            <span class="sentence">أما من لم يرد اسمه اليوم فلا تيأسوا، فالفصل القادم فرصة جديدة وصفحة بيضاء تنتظر أن تُكتب بحروف النجاح.</span>
+            <span class="sentence">تذكّروا دائمًا: "من جدّ وجد ومن زرع حصد ومن سار على الدرب وصل."</span>
         </div>
 
         <div class="section-title">
@@ -225,62 +238,7 @@
         }
 
         const resultsData = {
-            "أولى ابتدائي 1": [
-                { name: "لعواد فاطمة الزهراء", score: 9.47 },
-                { name: "غيبوب فرح", score: 9.35 },
-                { name: "لعواد آسيا لجين", score: 9.33 }
-            ],
-            "أولى ابتدائي 2": [
-                { name: "توبي هاجر", score: 9.69 },
-                { name: "لعسل شهد", score: 9.69 },
-                { name: "مرغاد براءة منية الله", score: 9.69 }
-            ],
-            "ثانية ابتدائي 1": [
-                { name: "شنيط محمد سراج", score: 9.50 },
-                { name: "بركة طلال ريان", score: 9.33 },
-                { name: "قوادرية رؤيا اليقين", score: 9.28 }
-            ],
-            "ثانية ابتدائي 2": [
-                { name: "شماح زين الدين", score: 9.75 },
-                { name: "عبد العزيز لجين", score: 9.67 },
-                { name: "العمري دعاء نور اليقين", score: 9.65 }
-            ],
-            "ثالثة ابتدائي 1": [
-                { name: "سكر يارا", score: 9.59 },
-                { name: "بريقلي عبد الرحمان", score: 9.54 },
-                { name: "كشيدة عبد العزيز", score: 9.47 }
-            ],
-            "ثالثة ابتدائي 2": [
-                { name: "خضراوي شعيب ياسين", score: 9.65 },
-                { name: "ضحوي أسيل مسعودة", score: 9.59 },
-                { name: "شامخ إدريس", score: 9.52 }
-            ],
-            "ثالثة ابتدائي 3": [
-                { name: "دهان محمد ريان", score: 9.64 },
-                { name: "طواقة أسيل", score: 9.64 },
-                { name: "جنيدي غفران", score: 9.54 }
-            ],
-            "رابعة ابتدائي 1": [
-                { name: "دهان عبد الودود", score: 9.45 },
-                { name: "زنودة سارة", score: 9.30 },
-                { name: "عزري يعقوب", score: 9.17 }
-            ],
-            "رابعة ابتدائي 2": [
-                { name: "لقويرح أحمد صهيب", score: 9.76 },
-                { name: "ضحوي ياسمين", score: 9.45 },
-                { name: "غيبوب أيوب", score: 9.43 }
-            ],
-            "خامسة ابتدائي 1": [
-                { name: "طرقي ياسمين", score: 9.67 },
-                { name: "عمير المعتصم بالله", score: 9.64 },
-                { name: "شرون ندى", score: 9.61 }
-            ],
-            "خامسة ابتدائي 2": [
-                { name: "بولنوار بهاء الدين", score: 9.62 },
-                { name: "زنودة لينا", score: 9.59 },
-                { name: "خضراوي تسنيم", score: 9.55 }
-            ]
-        };
+ვ
 
         const topTen = [
             { name: "لقويرح أحمد صهيب", score: 9.76 },
@@ -313,8 +271,8 @@
         }
 
         async function displayResults() {
-            // تأخير إضافي للسماح للجزء الأول بالظهور لمدة كافية (25 ثانية)
-            await new Promise(resolve => setTimeout(resolve, 25000));
+            // تأخير للسماح للفقرة التمهيدية بالظهور بالكامل (16 ثانية)
+            await new Promise(resolve => setTimeout(resolve, 16000));
 
             // عرض نتائج الفصول
             for (const [className, students] of Object.entries(resultsData)) {
