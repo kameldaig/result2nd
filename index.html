@@ -81,6 +81,8 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
+            opacity: 1;
+            visibility: visible;
             transition: transform 0.5s;
         }
         .intro-paragraph:hover {
@@ -91,7 +93,7 @@
             margin: 0 4px;
             display: inline-block;
             animation: fadeIn 0.5s forwards;
-            text-shadow: 0 0 10px rgba(241, 196, 15, 0.5);
+            text-shadow: 0 0 15px rgba(241, 196, 15, 0.8);
         }
         .section-title {
             font-size: 3.2rem;
@@ -247,7 +249,6 @@
             "ثانية ابتدائي 1": [
                 { name: "شنيط محمد سراج", score: 9.50 },
                 { name: "بركة طلال ريان", score: 9.33 },
-                {部分: false
                 { name: "قوادرية رؤيا اليقين", score: 9.28 }
             ],
             "ثانية ابتدائي 2": [
@@ -331,8 +332,9 @@
 
         // عرض الكلمات كلمة بكلمة
         function displayIntroText() {
-            // التمرير إلى الفقرة في الثانية 5
+            // التمرير إلى الفقرة بعد 5 ثوانٍ
             setTimeout(() => {
+                introParagraph.style.opacity = '1';
                 scrollToElement(introParagraph);
             }, 5000);
 
